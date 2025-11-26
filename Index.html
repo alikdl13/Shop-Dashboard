@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop-Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Shop-Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#overview">Startseite</a></li>
+                <li><a href="#products">Produkte</a></li>
+                <li><a href="#orders">Bestellungen</a></li>
+                <li><a href="#users">Benutzer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Menü</h2>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#products">Produkte verwalten</a></li>
+                <li><a href="#orders">Bestellungen verwalten</a></li>
+                <li><a href="#users">Benutzer verwalten</a></li>
+                <li><button id="toggleDark">Dunkel/Hell</button></li>
+            </ul>
+        </aside>
+        <main>
+            <section id="overview" class="card">
+                <h2>Übersicht</h2>
+                <div class="cards">
+                    <div class="card">Benutzeranzahl: <span id="totalUsers">120</span></div>
+                    <div class="card">Produktanzahl: <span id="totalProducts">45</span></div>
+                    <div class="card">Bestellungen heute: <span id="totalOrders">15</span></div>
+                    <div class="card">Einnahmen heute: <span id="totalRevenue">2.500.000</span> €</div>
+                </div>
+                <canvas id="salesChart" width="400" height="150"></canvas>
+            </section>
+            <section id="products" class="card">
+                <h2>Produkte verwalten</h2>
+                <input type="text" id="searchProduct" placeholder="Produkt suchen...">
+                <table id="productTable">
+                    <thead>
+                        <tr><th>Produktname</th><th>Preis</th><th>Lagerbestand</th><th>Aktionen</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button id="addProduct">Produkt hinzufügen</button>
+            </section>
+            <section id="orders" class="card">
+                <h2>Bestellungen</h2>
+                <table id="orderTable">
+                    <thead>
+                        <tr><th>Bestellnummer</th><th>Kunde</th><th>Gesamt</th><th>Status</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            <section id="users" class="card">
+                <h2>Benutzer</h2>
+                <table id="userTable">
+                    <thead>
+                        <tr><th>Name</th><th>E-Mail</th><th>Rolle</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
